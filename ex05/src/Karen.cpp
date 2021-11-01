@@ -6,7 +6,7 @@
 /*   By: jceia <jceia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 09:36:33 by jceia             #+#    #+#             */
-/*   Updated: 2021/11/01 09:48:41 by jceia            ###   ########.fr       */
+/*   Updated: 2021/11/01 10:02:56 by jceia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void Karen::error(void)
 
 void Karen::complain(std::string level)
 {
-    std::cout << level << ":\t";
+    std::cout << "[ " << level << " ]" << std::endl; 
     if (level == "DEBUG")
         this->debug();
     else if (level == "INFO")
@@ -60,5 +60,6 @@ void Karen::complain(std::string level)
     else if (level == "ERROR")
         this->error();
     else
-        std::cout << "Unrecognized level" << std::endl; 
+        std::cout << "Unrecognized level" << std::endl;
+    std::cout << std::endl;
 }
