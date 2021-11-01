@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jceia <jceia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/10 17:07:39 by jceia             #+#    #+#             */
-/*   Updated: 2021/10/10 17:22:06 by jceia            ###   ########.fr       */
+/*   Created: 2021/11/01 06:52:04 by jceia             #+#    #+#             */
+/*   Updated: 2021/11/01 07:08:07 by jceia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Pony.hpp"
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
-void    ponyOnTheStack(std::string name)
+# include <iostream>
+
+class Zombie
 {
-    Pony pony(name);
-    pony.speak();
-}
+private:
+    std::string _name;
 
-void    ponyOnTheHeap(std::string name)
-{
-    Pony    *pony;
+public:
+    Zombie(std::string name);
+    ~Zombie();
 
-    pony = new Pony(name);
-    pony->speak();
-    delete pony;
-}
+    void    announce(void);
+};
 
-int main(void)
-{
-    ponyOnTheStack("John");
-    ponyOnTheHeap("Maria");
-    return 0;
-}
+#endif

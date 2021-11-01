@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jceia <jceia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/10 17:07:42 by jceia             #+#    #+#             */
-/*   Updated: 2021/10/10 17:22:01 by jceia            ###   ########.fr       */
+/*   Created: 2021/11/01 06:52:21 by jceia             #+#    #+#             */
+/*   Updated: 2021/11/01 07:09:39 by jceia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Pony.hpp"
+#include "Zombie.hpp"
 #include <iostream>
 
-Pony::Pony(std::string name)
+Zombie::Zombie(std::string name)
     : _name(name)
 {
 }
 
-Pony::~Pony()
+Zombie::~Zombie()
 {
 }
 
-void Pony::speak()
+void Zombie::announce(void)
 {
-    std::cout << "I'm the pony " << _name << std::endl;
+    std::cout << _name << " BraiiiiiiinnnzzzZ..." << std::endl;
 }

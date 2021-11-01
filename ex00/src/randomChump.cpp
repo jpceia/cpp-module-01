@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.hpp                                           :+:      :+:    :+:   */
+/*   randomChump.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jceia <jceia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/10 17:07:47 by jceia             #+#    #+#             */
-/*   Updated: 2021/10/10 17:21:58 by jceia            ###   ########.fr       */
+/*   Created: 2021/11/01 06:52:19 by jceia             #+#    #+#             */
+/*   Updated: 2021/11/01 07:07:37 by jceia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PONY_HPP
-# define PONY_HPP
+# include "Zombie.hpp"
 
-#include <string>
-
-class Pony
+void    randomChump(std::string name)
 {
-private:
-    std::string _name;
-public:
-    Pony(std::string _name);
-    ~Pony();
-    void speak();
-};
-
-#endif
+    Zombie  zombie(name);
+    
+    zombie.announce();
+}
