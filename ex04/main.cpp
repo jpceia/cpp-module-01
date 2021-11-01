@@ -6,7 +6,7 @@
 /*   By: jceia <jceia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 08:54:07 by jceia             #+#    #+#             */
-/*   Updated: 2021/11/01 09:31:45 by jceia            ###   ########.fr       */
+/*   Updated: 2021/11/01 09:33:29 by jceia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,13 +61,13 @@ int main(int argc, char const *argv[])
     }
     
     fname = argv[1];
-    file_in.open(fname);
+    file_in.open(fname.c_str());
     if (!file_in) {
         std::cerr << "Error opering file." << std::endl;
         return (-1);
     }
 
-    file_out.open(fname + ".replace");
+    file_out.open((fname + ".replace").c_str());
     if (!file_out) {
         std::cerr << "Error creating file." << std::endl;
         return (-1);
