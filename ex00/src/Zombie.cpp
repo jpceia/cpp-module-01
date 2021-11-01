@@ -6,7 +6,7 @@
 /*   By: jceia <jceia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 06:52:21 by jceia             #+#    #+#             */
-/*   Updated: 2021/11/01 07:09:39 by jceia            ###   ########.fr       */
+/*   Updated: 2021/11/01 07:22:57 by jceia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ Zombie::Zombie(std::string name)
 
 Zombie::~Zombie()
 {
+    std::cout << "Destructor: " << _name << std::endl;
 }
 
 void Zombie::announce(void)
