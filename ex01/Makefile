@@ -6,7 +6,7 @@
 #    By: jceia <jceia@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/01 06:52:24 by jceia             #+#    #+#              #
-#    Updated: 2021/11/01 07:12:04 by jceia            ###   ########.fr        #
+#    Updated: 2021/11/01 10:46:19 by jceia            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,9 +39,10 @@ $(NAME): $(OBJS)
 all: $(NAME)
 
 clean:
-	$(RM) $(NAME)
+	$(RM) -rf $(OBJ_DIR)
 
-fclean:	clean
+fclean: clean
+	$(RM) $(NAME)
 
 # Rebuild
 re:	fclean all

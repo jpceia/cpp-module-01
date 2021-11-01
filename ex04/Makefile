@@ -6,7 +6,7 @@
 #    By: jceia <jceia@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/01 06:52:24 by jceia             #+#    #+#              #
-#    Updated: 2021/11/01 09:31:43 by jceia            ###   ########.fr        #
+#    Updated: 2021/11/01 10:45:53 by jceia            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,9 @@ $(NAME): $(OBJS)
 all: $(NAME)
 
 clean:
+	$(RM) $(OBJS)
+
+fclean: clean
 	$(RM) $(NAME)
 
 fclean:	clean
