@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex01.cpp                                           :+:      :+:    :+:   */
+/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jceia <jceia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/10 17:23:22 by jceia             #+#    #+#             */
-/*   Updated: 2021/10/10 17:25:28 by jceia            ###   ########.fr       */
+/*   Created: 2021/11/01 07:12:15 by jceia             #+#    #+#             */
+/*   Updated: 2021/11/01 07:20:45 by jceia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "Zombie.hpp"
 
-void memoryLeak()
+Zombie* zombieHorde(int N, std::string name)
 {
-    std::string* panther = new std::string("String panther");
-    std::cout << *panther << std::endl;
-    delete panther;
-}
+    Zombie  *zombies = new Zombie[N];
 
-int main(void)
-{
-    memoryLeak();
-    return 0;
+    for (int i=0; i<N; i++)
+        zombies[i].setName(name);
+    return (zombies);
 }
