@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jceia <jceia@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jpceia <joao.p.ceia@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 07:35:04 by jceia             #+#    #+#             */
-/*   Updated: 2021/11/01 10:42:48 by jceia            ###   ########.fr       */
+/*   Updated: 2021/12/14 15:34:20 by jpceia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ class HumanB
 {
 private:
     std::string _name;
-    Weapon      *_weapon;
+    Weapon*     _weapon;
 public:
-    HumanB(std::string name);
+    HumanB(const std::string& name);
     ~HumanB(void);
 
     void setWeapon(Weapon &weapon);

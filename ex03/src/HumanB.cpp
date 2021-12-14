@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jceia <jceia@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jpceia <joao.p.ceia@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 07:35:14 by jceia             #+#    #+#             */
-/*   Updated: 2021/11/01 10:42:57 by jceia            ###   ########.fr       */
+/*   Updated: 2021/12/14 15:28:32 by jpceia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 #include <iostream>
 
-HumanB::HumanB(std::string name)
+HumanB::HumanB(const std::string& name)
     : _name(name), _weapon(NULL)
 {
 }

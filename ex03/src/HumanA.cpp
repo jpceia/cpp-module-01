@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jceia <jceia@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jpceia <joao.p.ceia@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 07:35:11 by jceia             #+#    #+#             */
-/*   Updated: 2021/11/01 10:35:19 by jceia            ###   ########.fr       */
+/*   Updated: 2021/12/14 15:28:24 by jpceia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 
 
-HumanA::HumanA(std::string name, Weapon& weapon)
+HumanA::HumanA(const std::string& name, Weapon& weapon)
     : _name(name), _weapon(weapon)
 {
 }
