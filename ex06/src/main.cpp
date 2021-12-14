@@ -3,27 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jceia <jceia@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jpceia <joao.p.ceia@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 09:36:35 by jceia             #+#    #+#             */
-/*   Updated: 2021/11/01 10:00:22 by jceia            ###   ########.fr       */
+/*   Updated: 2021/12/14 17:22:55 by jpceia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Karen.hpp"
-
-int getLevelNb(std::string level)
-{
-    if (level == "DEBUG")
-        return 1;
-    else if (level == "INFO")
-        return 2;
-    else if (level == "WARNING")
-        return 3;
-    else if (level == "ERROR")
-        return 4;
-    return 0; 
-}
 
 int main(int argc, char *argv[])
 {
@@ -36,16 +23,16 @@ int main(int argc, char *argv[])
         std::cout << std::endl;
         return (0);
     }
-    level = getLevelNb(argv[1]);
+    level = karen.complain_index(argv[1]);
     switch (level)
     {
-    case 1:
+    case 0:
         karen.complain("DEBUG");
-    case 2:
+    case 1:
         karen.complain("INFO");
-    case 3:
+    case 2:
         karen.complain("WARNING");
-    case 4:
+    case 3:
         karen.complain("ERROR");
         break ;
     default:

@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jceia <jceia@student.42.fr>                +#+  +:+       +#+         #
+#    By: jpceia <joao.p.ceia@gmail.com>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/01 06:52:24 by jceia             #+#    #+#              #
-#    Updated: 2021/11/01 10:45:21 by jceia            ###   ########.fr        #
+#    Updated: 2021/12/14 17:20:03 by jpceia           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 		= karen
+NAME 		= karenFilter
 
 SRC_DIR		= src
 OBJ_DIR		= obj
@@ -33,18 +33,18 @@ $(OBJ_DIR)/%.o:	$(SRC_DIR)/%
 	@mkdir -p $(dir $@)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
+# Linking
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
 all: $(NAME)
 
+# Cleaning
 clean:
 	$(RM) -rf $(OBJ_DIR)
 
 fclean: clean
 	$(RM) $(NAME)
-
-fclean:	clean
 
 # Rebuild
 re:	fclean all
@@ -54,4 +54,4 @@ debug:		CXXFLAGS += $(FLAGS_DEBUG)
 debug:		re
 
 
-.PHONY:		all clean fclean re
+.PHONY:		all clean fclean re debug
