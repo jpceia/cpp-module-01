@@ -6,7 +6,7 @@
 /*   By: jpceia <joao.p.ceia@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 06:52:04 by jceia             #+#    #+#             */
-/*   Updated: 2021/12/14 14:37:43 by jpceia           ###   ########.fr       */
+/*   Updated: 2021/12/14 14:51:55 by jpceia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ class Zombie
 {
 private:
     std::string _name;
-    Zombie(void);
 
 public:
-    Zombie(std::string name);
-    ~Zombie();
+    Zombie(void);
+    Zombie(const std::string& name);
+    ~Zombie(void);
 
     void    announce(void);
 };

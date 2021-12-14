@@ -6,7 +6,7 @@
 /*   By: jpceia <joao.p.ceia@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 06:52:21 by jceia             #+#    #+#             */
-/*   Updated: 2021/12/14 14:38:27 by jpceia           ###   ########.fr       */
+/*   Updated: 2021/12/14 14:52:05 by jpceia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Zombie::Zombie(void)
 {
 }
 
-Zombie::Zombie(std::string name)
+Zombie::Zombie(const std::string& name)
     : _name(name)
 {
 }
