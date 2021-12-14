@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jceia <jceia@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jpceia <joao.p.ceia@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 06:52:14 by jceia             #+#    #+#             */
-/*   Updated: 2021/11/01 07:08:23 by jceia            ###   ########.fr       */
+/*   Updated: 2021/12/14 14:32:46 by jpceia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie* newZombie(std::string name);
-void    randomChump(std::string name);
-
 int main(void)
 {
     Zombie  *zombie1 = newZombie("Joao");
     Zombie  *zombie2 = newZombie("Pedro");
+
+    zombie1->announce();
+    zombie2->announce();
 
     randomChump("Maria");
 

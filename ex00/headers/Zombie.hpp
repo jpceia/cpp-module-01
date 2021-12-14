@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jceia <jceia@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jpceia <joao.p.ceia@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 06:52:04 by jceia             #+#    #+#             */
-/*   Updated: 2021/11/01 07:08:07 by jceia            ###   ########.fr       */
+/*   Updated: 2021/12/14 14:37:43 by jpceia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ class Zombie
 {
 private:
     std::string _name;
+    Zombie(void);
 
 public:
     Zombie(std::string name);
@@ -26,5 +27,8 @@ public:
 
     void    announce(void);
 };
+
+Zombie* newZombie(std::string name);
+void    randomChump(std::string name);
 
 #endif

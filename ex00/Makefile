@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jceia <jceia@student.42.fr>                +#+  +:+       +#+         #
+#    By: jpceia <joao.p.ceia@gmail.com>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/01 06:52:24 by jceia             #+#    #+#              #
-#    Updated: 2021/11/01 10:46:28 by jceia            ###   ########.fr        #
+#    Updated: 2021/12/14 13:43:22 by jpceia           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,11 +33,13 @@ $(OBJ_DIR)/%.o:	$(SRC_DIR)/%
 	@mkdir -p $(dir $@)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
+# Linking
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
 all: $(NAME)
 
+# Compilation
 clean:
 	$(RM) -rf $(OBJ_DIR)
 
@@ -54,4 +56,4 @@ debug:		CXXFLAGS += $(FLAGS_DEBUG)
 debug:		re
 
 
-.PHONY:		all clean fclean re
+.PHONY:		all clean fclean re debug
