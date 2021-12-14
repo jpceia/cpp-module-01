@@ -6,7 +6,7 @@
 /*   By: jpceia <joao.p.ceia@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 09:36:33 by jceia             #+#    #+#             */
-/*   Updated: 2021/12/14 17:10:00 by jpceia           ###   ########.fr       */
+/*   Updated: 2021/12/14 17:19:25 by jpceia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,20 +32,20 @@ Karen::~Karen()
 void Karen::debug(void)
 {
     std::cout << "I love to get extra bacon for my ";
-    std::cout << "7XL-double-cheese-triple-pickle-special-ketchup burger. ";
+    std::cout << "7XL-double-cheese-triple-pickle-special-ketchup burger.\n";
     std::cout << "I just love it!" << std::endl;
 }
 
 void Karen::info(void)
 {
-    std::cout << "I cannot believe adding extra bacon cost more money. ";
+    std::cout << "I cannot believe adding extra bacon cost more money.\n";
     std::cout << "You don’t put enough! ";
     std::cout << "If you did I would not have to ask for it!" << std::endl;
 }
 
 void Karen::warning(void)
 {
-    std::cout << "I think I deserve to have some extra bacon for free. ";
+    std::cout << "I think I deserve to have some extra bacon for free.\n";
     std::cout << "I’ve been coming here for years and you just started ";
     std::cout << "working here last month." << std::endl;
 }
