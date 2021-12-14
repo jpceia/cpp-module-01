@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jceia <jceia@student.42.fr>                +#+  +:+       +#+         #
+#    By: jpceia <joao.p.ceia@gmail.com>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/01 06:52:24 by jceia             #+#    #+#              #
-#    Updated: 2021/11/01 10:45:53 by jceia            ###   ########.fr        #
+#    Updated: 2021/12/14 15:43:46 by jpceia           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 		= winner_sed
+NAME 		= replace
 
 SRCS 		= $(shell find . -name "*.cpp" -type f)
 OBJS		= $(SRCS:%.cpp=%.o)
@@ -27,18 +27,18 @@ CXXFLAGS	= $(FLAGS_WARN) $(FLAGS_INC) -std=c++98
 .cpp.o:
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
+# Linking
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
 all: $(NAME)
 
+# Cleaning
 clean:
 	$(RM) $(OBJS)
 
 fclean: clean
 	$(RM) $(NAME)
-
-fclean:	clean
 
 # Rebuild
 re:	fclean all
@@ -48,4 +48,4 @@ debug:		CXXFLAGS += $(FLAGS_DEBUG)
 debug:		re
 
 
-.PHONY:		all clean fclean re
+.PHONY:		all clean fclean re debug

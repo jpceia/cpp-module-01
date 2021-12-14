@@ -3,47 +3,43 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jceia <jceia@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jpceia <joao.p.ceia@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 08:54:07 by jceia             #+#    #+#             */
-/*   Updated: 2021/11/01 09:33:29 by jceia            ###   ########.fr       */
+/*   Updated: 2021/12/14 16:26:57 by jpceia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fstream>
 #include <iostream>
 
-void    winner_sed(std::ifstream &file_in, std::ofstream &file_out,
-                   std::string oldStr, std::string newStr)
+void    strreplace(std::string &str, const std::string &from, const std::string &to)
 {
-    int             index;
-    char            c;
+    std::size_t start_pos = 0;
+    std::size_t pos;
 
-    index = 0;
-    while (1)
+    if (from.empty())
+        return;
+    while (true)
     {
-        file_in.read(&c, 1);
-        if (file_in.eof())
-            break ;
-        if (c == oldStr[index])
-        {
-            index++;
-            if (index == (int)oldStr.length())
-            {
-                file_out.write(newStr.c_str(), newStr.length());
-                index = 0;
-            }
-        }
-        else
-        {
-            if (index > 0)
-                file_out.write(oldStr.c_str(), index);
-            index = 0;
-            file_out.write(&c, 1);
-        }
+        pos = str.find(from, start_pos);
+        if (pos == std::string::npos)   // no match
+            break;
+        str = str.substr(0, pos) + to + str.substr(pos + from.length());
+        start_pos = pos + to.length();  // starting position for next search
     }
-    if (index > 0)
-        file_out.write(oldStr.c_str(), index);
+}
+
+void    replace(std::ifstream &file_in, std::ofstream &file_out,
+                const std::string& s_old, const std::string& s_new)
+{
+    while (!file_in.eof())
+    {
+        std::string line;
+        std::getline(file_in, line);
+        strreplace(line, s_old, s_new);
+        file_out << line << std::endl;
+    }
 }
 
 int main(int argc, char const *argv[])
@@ -51,37 +47,36 @@ int main(int argc, char const *argv[])
     std::ifstream   file_in;
     std::ofstream   file_out;
     std::string     fname;
-    std::string     sOld, sNew;
-
+    std::string     s_old, s_new;
     
     if (argc != 4)
     {
         std::cout << "Arguments: [filename] [old] [new]" << std::endl;
-        return (-1);
+        return (0);
     }
     
     fname = argv[1];
     file_in.open(fname.c_str());
     if (!file_in) {
-        std::cerr << "Error opering file." << std::endl;
-        return (-1);
+        std::cerr << "Error opening file." << std::endl;
+        return (1);
     }
 
     file_out.open((fname + ".replace").c_str());
     if (!file_out) {
         std::cerr << "Error creating file." << std::endl;
-        return (-1);
+        return (2);
     }
     
-    sOld = argv[2];
-    sNew = argv[3];
-    if (sOld.length() == 0 || sNew.length() == 0)
+    s_old = argv[2];
+    s_new = argv[3];
+    if (s_old.length() == 0 || s_new.length() == 0)
     {
         std::cerr << "Please provide non-empty strings." << std::endl;
-        return (-1);
+        return (3);
     }
     
-    winner_sed(file_in, file_out, sOld, sNew);
+    replace(file_in, file_out, s_old, s_new);
 
     file_in.close();
     file_out.close();
