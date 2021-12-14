@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Karen.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jceia <jceia@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jpceia <joao.p.ceia@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 09:36:33 by jceia             #+#    #+#             */
-/*   Updated: 2021/11/01 10:02:56 by jceia            ###   ########.fr       */
+/*   Updated: 2021/12/14 17:10:00 by jpceia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,14 @@
 
 Karen::Karen(void)
 {
+    _complain_level[0] = "DEBUG";
+    _complain_level[1] = "INFO";
+    _complain_level[2] = "WARNING";
+    _complain_level[3] = "ERROR";
+    _complain_func[0] = &Karen::debug;
+    _complain_func[1] = &Karen::info;
+    _complain_func[2] = &Karen::warning;
+    _complain_func[3] = &Karen::error;
 }
 
 Karen::~Karen()
@@ -50,16 +58,22 @@ void Karen::error(void)
 
 void Karen::complain(std::string level)
 {
-    std::cout << "[ " << level << " ]" << std::endl; 
-    if (level == "DEBUG")
-        this->debug();
-    else if (level == "INFO")
-        this->info();
-    else if (level == "WARNING")
-        this->warning();
-    else if (level == "ERROR")
-        this->error();
-    else
-        std::cout << "Unrecognized level" << std::endl;
+    int index = complain_index(level);
+    
+    std::cout << "[ " << level << " ]" << std::endl;
+    if (index < 0 || index >= 4)
+    {
+        std::cout << "I don't know what to say." << std::endl;
+        return ;
+    }
+    (this->*(_complain_func[index]))();
     std::cout << std::endl;
+}
+
+int Karen::complain_index(const std::string& level)
+{
+    for (std::size_t i = 0; i < 4; i++)
+        if (level == _complain_level[i])
+            return (i);
+    return (-1);
 }
