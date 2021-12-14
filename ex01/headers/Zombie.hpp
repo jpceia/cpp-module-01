@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jceia <jceia@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jpceia <joao.p.ceia@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 06:52:04 by jceia             #+#    #+#             */
-/*   Updated: 2021/11/01 07:20:02 by jceia            ###   ########.fr       */
+/*   Updated: 2021/12/14 15:02:16 by jpceia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,13 @@ private:
 
 public:
     Zombie(void);
-    Zombie(std::string name);
+    Zombie(const std::string& name);
     ~Zombie(void);
 
     void    announce(void);
-    void    setName(std::string name);
+    void    setName(const std::string& name);
 };
+
+Zombie* zombieHorde(int N, std::string name);
 
 #endif

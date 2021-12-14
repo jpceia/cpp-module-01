@@ -3,23 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jceia <jceia@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jpceia <joao.p.ceia@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 06:52:14 by jceia             #+#    #+#             */
-/*   Updated: 2021/11/01 07:23:36 by jceia            ###   ########.fr       */
+/*   Updated: 2021/12/14 15:02:38 by jpceia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie* zombieHorde(int N, std::string name);
-
 int main(void)
 {
-    int     nb_zombies = 10;
-    Zombie  *zombies = zombieHorde(nb_zombies, "zombie");
+    int N = 5;
+    Zombie  *zombies = zombieHorde(N, "zombie");
 
-    for (int i=0; i < nb_zombies; i++)
+    for (int i=0; i < N; i++)
         zombies[i].announce();
 
     delete[] zombies;
