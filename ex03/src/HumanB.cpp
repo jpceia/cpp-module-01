@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jpceia <joao.p.ceia@gmail.com>             +#+  +:+       +#+        */
+/*   By: jceia <jceia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 07:35:14 by jceia             #+#    #+#             */
-/*   Updated: 2021/12/14 15:28:32 by jpceia           ###   ########.fr       */
+/*   Updated: 2021/12/17 13:01:49 by jceia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ void HumanB::setWeapon(Weapon &weapon)
 
 void HumanB::attack(void)
 {
-    std::cout << _name << "attacks with his ";
+    std::cout << _name << " attacks with his ";
     std::cout << _weapon->getType() << std::endl; 
 }
